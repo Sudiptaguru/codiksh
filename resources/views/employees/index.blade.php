@@ -25,6 +25,10 @@
             <th>Logo</th>
             <th>Company Name</th>
             <th>Company's Email</th>
+            <th>Employee's First Name</th>
+            <th>Employee's Last Name</th>
+            <th>Employee's Email</th>
+            <th>Employee's Phone</th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($employees as $employee)
@@ -34,6 +38,10 @@
             <td><img src="image/{{ $employee->logo }}" height="75" width="75" alt="" /></td>
             <td>{{ $employee->company_name }}</td>
             <td>{{ $employee->company_email }}</td>
+            <td>{{ $employee->first_name }}</td>
+            <td>{{ $employee->last_name }}</td>
+            <td>{{ $employee->employee_email }}</td>
+            <td>{{ $employee->phone }}</td>
             <td>
                 <form action="{{ route('employees.destroy',$employee->id) }}" method="POST">
     
