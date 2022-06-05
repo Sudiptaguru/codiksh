@@ -22,7 +22,7 @@ class CompanyController extends Controller
 
         // ->select('employee.name','members.name')
         // ->get();
-        ->paginate(5);
+        ->paginate(10);
         // return $data;
         $i=1;
     
@@ -42,7 +42,6 @@ class CompanyController extends Controller
             'company_name' => 'required',
             'company_email' => 'required|email',
             'logo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'website' => 'required',
         ]);
 
         if ($logo = $request->file('logo')) {
@@ -92,7 +91,6 @@ class CompanyController extends Controller
             'company_name' => 'required',
             'company_email' => 'required|email',
             'logo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'website' => 'required',
         ]);
 
         $company = Company::find($id);
