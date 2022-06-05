@@ -37,10 +37,10 @@ class CompanyController extends Controller
         $request->validate([
             'first_name' => 'required',
             'last_name' => 'required',
-            'employee_email' => 'required|email',
+            'employee_email' => 'required|email|max:255|unique:employees',
             'phone' => 'required',
             'company_name' => 'required',
-            'company_email' => 'required|email',
+            'company_email' => 'required|email|max:255|unique:companies',
             'logo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
@@ -86,10 +86,10 @@ class CompanyController extends Controller
         $request->validate([
             'first_name' => 'required',
             'last_name' => 'required',
-            'employee_email' => 'required|email',
+            'employee_email' => 'required|email|max:255|unique:employees',
             'phone' => 'required',
             'company_name' => 'required',
-            'company_email' => 'required|email',
+            'company_email' => 'required|email|max:255|unique:companies',
             'logo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
